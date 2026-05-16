@@ -2,12 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>violintuner</title>
+    <title>Violin Tuner</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        font-size: 1.25rem;
+        line-height: 1.5;
+        margin: 1rem;
+        max-width: 32rem;
+      }
+      #output {
+        margin-top: 1rem;
+        font-variant-numeric: tabular-nums;
+      }
+      #in-tune {
+        font-weight: bold;
+      }
+      #status {
+        margin-top: 0.75rem;
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <h1>Violin Tuner</h1>
+    <p>
+      Uses your microphone to detect pitch. Click Start when you are ready to
+      tune.
+    </p>
+    <button id="start-btn" type="button">Start tuning</button>
+    <div id="status" aria-live="polite"></div>
+    <div id="output" aria-live="polite"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
